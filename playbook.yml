@@ -1,0 +1,17 @@
+- hosts: all
+
+  roles:
+    - roles/docker
+    - roles/network
+    - roles/database
+    - roles/app
+    - roles/proxy
+
+  gather_facts: false
+  become: yes
+
+  tasks:
+   - name: Test connection
+     ping:
+
+# Install Docker
